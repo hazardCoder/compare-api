@@ -1,18 +1,49 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div height=window.outerHeight>
+      <el-row :gutter="20" justify="center" type="flex">
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            <p>设计API</p>
+            <DesignApi></DesignApi>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            <p>全量API</p>
+            <AllApi></AllApi>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            <p>注册API</p>
+            <RegistedApi></RegistedApi>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20" justify="center" type="flex" align="bottom">
+        <el-col :span="24">
+          <div class="grid-content bg-purple">
+            <DiffApi></DiffApi>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DesignApi from './components/DesignApi.vue'
+import AllApi from './components/AllApi.vue'
+import RegistedApi from './components/RegistedApi.vue'
+import DiffApi from './components/DiffApi.vue'
 
 export default {
-  name: 'App',
+  name: 'design',
   components: {
-    HelloWorld
-  }
+    DesignApi,
+    AllApi,
+    RegistedApi,
+    DiffApi
+}
 }
 </script>
 
@@ -23,6 +54,21 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
 </style>
